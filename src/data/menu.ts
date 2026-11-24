@@ -82,16 +82,16 @@ const FEATURED: FeaturedDish[] = [
     image: img("meat-variety"),
     accent: "#d9a07a",
     en: {
-      title: "To share", subtitle: "Meat variety", label: "Meat variety",
-      alt: "A wooden board of grilled meats, potatoes and peppers",
-      description: "A mixed grill for the table: chops, skewers, kebab and sausage with potatoes and grilled peppers.",
-      ingredients: ["Pork chops", "Skewers", "Kebab", "Sausage", "Potatoes", "Peppers"],
+      title: "To share", subtitle: "Mixed grill", label: "Mixed grill",
+      alt: "Mixed grill platter with lamb chops, chicken, bifteki, village sausage and pancetta",
+      description: "A platter for the table: lamb chops, chicken, bifteki, Greek village sausage and pancetta, all off the charcoal grill.",
+      ingredients: ["Lamb chops", "Chicken", "Bifteki", "Village sausage", "Pancetta"],
     },
     el: {
-      title: "Για παρέα", subtitle: "Ποικιλία", label: "Ποικιλία κρεάτων",
-      alt: "Ξύλο με ψητά κρέατα, πατάτες και πιπεριές",
-      description: "Ποικιλία σχάρας για το τραπέζι: μπριζολάκια, καλαμάκια, κεμπάπ και λουκάνικο με πατάτες και πιπεριές.",
-      ingredients: ["Μπριζολάκια", "Καλαμάκια", "Κεμπάπ", "Λουκάνικο", "Πατάτες", "Πιπεριές"],
+      title: "Για παρέα", subtitle: "Ποικιλίες", label: "Ποικιλίες",
+      alt: "Ποικιλία με αρνίσια παϊδάκια, κοτόπουλο, μπιφτέκι, χωριάτικο λουκάνικο και πανσέτα",
+      description: "Πιατέλα για το τραπέζι: αρνί, κοτόπουλο, μπιφτέκι, χωριάτικο λουκάνικο και πανσέτα, όλα στα κάρβουνα.",
+      ingredients: ["Αρνί", "Κοτόπουλο", "Μπιφτέκι", "Χωριάτικο λουκάνικο", "Πανσέτα"],
     },
   },
   {
@@ -232,7 +232,7 @@ export const MENU: Section[] = [
     ["Chicken", "Κοτόπουλο"], ["Chicken fillet with cream sauce", "Φιλέτο κοτόπουλο με σάλτσα κρέμας"],
     ["Grilled chicken", "Κοτόπουλο σχάρας"], ["Schnitzel", "Σνίτσελ"], ["Schnitzel with cream sauce", "Σνίτσελ με σάλτσα κρέμας"],
     ["Schnitzel roquefort", "Σνίτσελ ροκφόρ"], ["Pepper steak", "Μπριζόλα πιπεράτη"],
-    ["Steak with cream sauce", "Μπριζόλα με σάλτσα κρέμας"], ["Meat variety", "Ποικιλία κρεάτων"],
+    ["Steak with cream sauce", "Μπριζόλα με σάλτσα κρέμας"], ["Mixed grill", "Ποικιλίες"],
   ] },
   { en: "Pitta bread", el: "Πίτες", items: [
     ["Pitta with pork", "Πίτα χοιρινό"], ["Pitta with chicken", "Πίτα κοτόπουλο"], ["Pitta with kebab", "Πίτα κεμπάπ"],
