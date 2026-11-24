@@ -36,12 +36,6 @@ export default function App() {
     try { localStorage.setItem("kozi-lang", lang) } catch { /* storage blocked */ }
   }, [lang])
 
-  // A real link click (not window.open), so it also works where pop-ups are blocked
-  const open = (url: string) => {
-    const a = document.createElement("a")
-    a.href = url; a.target = "_blank"; a.rel = "noopener"
-    a.click()
-  }
   const toMenu = () => document.getElementById("menu")?.scrollIntoView()
 
   return (
@@ -80,8 +74,8 @@ export default function App() {
             round
             loop={false}
             labels={LABELS[lang]}
-            onPlay={() => open(KOZI.maps)}
-            onOrder={() => open(KOZI.wolt)}
+            playHref={KOZI.maps}
+            orderHref={KOZI.wolt}
             onMenu={toMenu}
           />
         </section>

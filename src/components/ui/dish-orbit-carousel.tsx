@@ -102,6 +102,10 @@ export type DishOrbitCarouselProps = {
   /** Show square photos as round plates (for photos that are not cut-outs). */
   round?: boolean
   labels?: Partial<DishOrbitLabels>
+  /** Make the play button a real link (opens in a new tab) instead of calling onPlay. */
+  playHref?: string
+  /** Make the order button a real link (opens in a new tab) instead of calling onOrder. */
+  orderHref?: string
   onPlay?: (dish: Dish, index: number) => void
   onOrder?: (dish: Dish, index: number) => void
   onChange?: (index: number) => void
@@ -220,7 +224,7 @@ const CSS =
   ".dsh-t1{font-weight:200;letter-spacing:-.015em;margin-top:6px}" +
   ".dsh-t2{font-weight:800;letter-spacing:-.025em;margin-top:6px;color:color-mix(in oklab,var(--color-foreground) 86%,transparent)}" +
   ".dsh-acts{position:absolute;left:396px;top:280px;display:flex;gap:44px;font-size:12.5px;font-weight:500}" +
-  ".dsh-acts .dsh-btn{display:flex;align-items:center;gap:9px;padding:4px 0}" +
+  ".dsh-acts .dsh-btn{text-decoration:none;display:flex;align-items:center;gap:9px;padding:4px 0}" +
   ".dsh-acts .dsh-ico{width:13px;height:13px}" +
   ".dsh-acts .dsh-fill{fill:currentColor;stroke:none}" +
   ".dsh-card{position:absolute;left:722px;top:137px;width:223px;padding:18px 20px 20px;border-radius:20px;" +
@@ -299,6 +303,8 @@ export function DishOrbitCarousel({
   fontSrc = OUTFIT_WOFF2,
   round = false,
   labels: labelsIn,
+  playHref,
+  orderHref,
   onPlay,
   onOrder,
   onChange,
@@ -567,8 +573,16 @@ export function DishOrbitCarousel({
         </div>
 
         <div className="dsh-acts">
-          <button type="button" className="dsh-btn" onClick={() => dish && onPlay?.(dish, index)}>{Icon.play}{L.play}</button>
-          <button type="button" className="dsh-btn" onClick={() => dish && onOrder?.(dish, index)}>{Icon.order}{L.order}</button>
+          {playHref ? (
+            <a className="dsh-btn" href={playHref} target="_blank" rel="noopener">{Icon.play}{L.play}</a>
+          ) : (
+            <button type="button" className="dsh-btn" onClick={() => dish && onPlay?.(dish, index)}>{Icon.play}{L.play}</button>
+          )}
+          {orderHref ? (
+            <a className="dsh-btn" href={orderHref} target="_blank" rel="noopener">{Icon.order}{L.order}</a>
+          ) : (
+            <button type="button" className="dsh-btn" onClick={() => dish && onOrder?.(dish, index)}>{Icon.order}{L.order}</button>
+          )}
         </div>
 
         <div className="dsh-card">
