@@ -27,8 +27,8 @@ type FeaturedDish = {
   el: Omit<Dish, "image" | "accent" | "chef" | "kitchen">
 }
 
-/* The dishes in the carousel. Photos: free Unsplash photos of similar dishes
-   (not Kozi's own plates); swap in the restaurant's photos when available. */
+/* The dishes in the carousel. Photos: AI-generated, illustrative (not Kozi's own
+   plates); swap in the restaurant's photos when available. */
 const FEATURED: FeaturedDish[] = [
   {
     image: img("gyros-pitta"),
